@@ -1,0 +1,71 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+Set padding to keep content from hitting the edges .body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+Override the default bootstrap behavior where horizontal description lists will truncate terms that are too long to fit in the left column .dl-horizontal dt {
+    white-space: normal;
+}
+
+/*Aline*/
+.acoes span {
+    cursor: pointer;
+    margin-right: 3px;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+    background: #f1f1f1;
+}
+
+.table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th {
+    background: #e4e4e4;
+}
+
+.table > tr > td {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+}
+
+.btn-add {
+    background: #404040;
+    border: 1px solid #000000;
+    padding: 7px;
+    color: #FFFFFF;
+}
+
+    .btn-add:hover {
+        background: #7B7B7B;
+    }
+
+.btn-salvar {
+    background: #059c04;
+    border: 1px solid #068005;
+    padding: 7px;
+    color: #FFFFFF;
+}
+
+    .btn-salvar:hover {
+        background: #08ab07;
+    }
+
+.btn-cancelar {
+    Background: #820000;
+    border: 1px solid #7d0303;
+    padding: 7px;
+    color: #FFFFFF;
+}
+
+    .btn-cancelar:hover {
+        background: #a70202;
+    }
+
+.mtop15 {
+    margin-top: 15px;
+}
+/*Fim Aline*/

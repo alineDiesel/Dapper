@@ -1,0 +1,75 @@
+﻿@model List<Dapper.Models.Categoria_Receita_Tipo>
+<div class="row mtop15" hidden="hidden">
+    <div class="panel panel-success">
+        <div class="panel-heading">Panel with panel-success class</div>
+        <div class="panel-body">Panel Content</div>
+    </div>
+</div>
+<div class="row mtop15">
+    <button class="btn-add">Novo cadastro</button>
+</div>
+<div class="div-cadastro" hidden="hidden">
+    <div class="row">
+        <h2>Tipos de receita <small>Cadastro</small></h2>
+    </div>
+    <div class="row mtop15">
+        <form role="form" method="post" action="">
+            <div class="form-group">
+                <label>Descrição:</label>
+                <input type="text" name="Descricao" class="form-control" maxlength="45" />
+            </div>
+            <input type="hidden" name="ID" />
+            <input type="submit" class="btn-salvar" value="Salvar" />
+            <input type="button" class="btn-cancelar" value="Cancelar" />
+
+        </form>
+    </div>
+</div>
+<hr />
+<div class="div-cadastrados">
+    <div class="row">
+        <h2>Tipos de receita <small>Cadastrados</small></h2>
+    </div>
+    <div class="row">
+        <table class="table table-hover table-striped table-responsive col-md-12">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Descrição</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                        <tr id="CTR_@item.ID">
+                            <td>@item.ID</td>
+                            <td>@item.Descricao</td>
+                            <td class="acoes">
+                                <span class="glyphicon glyphicon-edit" title="Editar" onclick="javascript:editar(@item.ID, '@item.Descricao')"></span>
+                                <span class="glyphicon glyphicon-remove" title="Excluir" onclick="excluir(@item.ID)"></span>
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $(".btn-salvar").click(function () {
+            $("form").submit();
+        });
+    });
+
+    function editar(id, descricao) {
+        $(".btn-add").click();
+        $("form input[name='Descricao']").val(descricao);
+        $("form input[name='ID']").val(id);
+    }
+</script>
