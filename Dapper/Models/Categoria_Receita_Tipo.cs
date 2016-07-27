@@ -43,7 +43,7 @@ namespace Dapper.Models
             try
             {
                 var conexao = Conexao.conectar();
-                String query = "INSERT INTO Categoria_Receita_Tipo VALUES('" + categoriaReceitaTipo.Descricao + "', '" + categoriaReceitaTipo.isAtivo + "')SELECT CAST(SCOPE_IDENTITY() as int)";
+                String query = "INSERT INTO Categoria_Receita_Tipo VALUES('" + categoriaReceitaTipo.Descricao + "', '1')SELECT CAST(SCOPE_IDENTITY() as int)";
                 var id = conexao.Query<int>(query).Single();
                 return id;
             }
