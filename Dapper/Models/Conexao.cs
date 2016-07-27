@@ -11,10 +11,10 @@ namespace Dapper.Models
     public static class Conexao
     {
         public static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conexao"].ConnectionString);
-
         public static SqlConnection conectar()
         {
-            con.Open();
+            if (con.State == System.Data.ConnectionState.Closed)
+                con.Open();
             return con;
         }
 

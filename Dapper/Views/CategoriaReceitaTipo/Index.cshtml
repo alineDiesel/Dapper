@@ -13,12 +13,12 @@
         <h2>Tipos de receita <small>Cadastro</small></h2>
     </div>
     <div class="row mtop15">
-        <form role="form" method="post" action="">
+        <form role="form" method="post" action="CategoriaReceitaTipo/Cadastro">
             <div class="form-group">
                 <label>Descrição:</label>
                 <input type="text" name="Descricao" class="form-control" maxlength="45" />
             </div>
-            <input type="hidden" name="ID" />
+            <input type="hidden" name="ID" value="0" id="txtID" />
             <input type="submit" class="btn-salvar" value="Salvar" />
             <input type="button" class="btn-cancelar" value="Cancelar" />
 
@@ -49,7 +49,7 @@
                             <td>@item.Descricao</td>
                             <td class="acoes">
                                 <span class="glyphicon glyphicon-edit" title="Editar" onclick="javascript:editar(@item.ID, '@item.Descricao')"></span>
-                                <span class="glyphicon glyphicon-remove" title="Excluir" onclick="excluir(@item.ID)"></span>
+                                <a href="@Url.Action("Excluir", "CategoriaReceitaTipo", new { ID = item.ID })"><span class="glyphicon glyphicon-remove" title="Excluir"></span></a>
                             </td>
                         </tr>
                     }
@@ -61,11 +61,6 @@
 </div>
 
 <script>
-    $(document).ready(function () {
-        $(".btn-salvar").click(function () {
-            $("form").submit();
-        });
-    });
 
     function editar(id, descricao) {
         $(".btn-add").click();

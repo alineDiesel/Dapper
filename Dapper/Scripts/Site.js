@@ -12,5 +12,7 @@
     $(".btn-cancelar").click(function () {
         $(".div-cadastro").hide();
         $(".btn-add").removeAttr("hidden");
+        $("form")[0].reset();
+        $("#txtID").val("0");
     });
 });
